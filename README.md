@@ -1,2 +1,2 @@
 # termux-api
-termux api commands
+this tool is under devlopment 
