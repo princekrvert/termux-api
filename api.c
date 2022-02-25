@@ -7,15 +7,15 @@ void help(){
     printf("-h or --help for the help\n ");
      printf("For cmd list check the princekrvert github page \n ");
 }
-void main(int argc , char *argv[]){
+int main(int argc , char *argv[]){
     // make a function to handle the aguments 
     if (argc == 1){
         help();
     }
-    else if (argc > 2){
+    else if (argc > 3){
         printf("I can't handle too many arguments ");
     }
-    if (argc == 2 ){
+    else if (argc == 2 ){
         // main process goes here
         if (strcmp(argv[1],"-h") == 0){
             help();
@@ -107,5 +107,21 @@ void main(int argc , char *argv[]){
         }
         
     }
-    
+    else if ( argc == 3){
+        // some special commands 
+        if (strcmp(argv[1],"torch") == 0 && strcmp(argv[2],"on") == 0){
+            system("termux-torch on");
+        }
+        else if(strcmp(argv[1],"torch") == 0 && strcmp(argv[2],"off") == 0){
+            system("termux-torch off");
+        }
+        else {
+            printf("This command is currently not available ");
+        }
+
+    }
+    else{
+        printf("[!] Too many arguments ");
+    }
+ return 0;   
 }
