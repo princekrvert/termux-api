@@ -4,6 +4,7 @@
 #first generate the binary code using c lang 
 apt update && apt upgrade -y 
 # now install the clang 
+pkg install termux-api 
 pkg isntall clang 
 # now compile the api 
 clang api.c -o api 
